@@ -1,0 +1,20 @@
+{
+    "name": "kkowalczyk/command",
+    "description": "command",
+    "authors": [
+        {
+            "name": "Kamil Kowalczyk",
+            "email": "kkowalczyk@ifxpayments.com"
+        }
+    ],
+    "type": "project",
+    "require": {
+        "symfony/console": "^5.3"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}
