@@ -1,10 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Commands;
 
 use App\Classes\Content;
 use App\Classes\ReadFile;
-use App\Classes\StringParser;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -37,6 +38,7 @@ class ChangeCommand extends Command
         } catch (RuntimeException $exception) {
             $output->writeln($exception->getMessage());
         }
+
         return Command::SUCCESS;
     }
 }

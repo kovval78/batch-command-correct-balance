@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Classes;
 
 class ReadFile
@@ -15,7 +17,7 @@ class ReadFile
     {
         $content = [];
         if (($handle = fopen($this->fileName, "r")) !== FALSE) {
-            while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+            while (($data = fgetcsv($handle, 1000)) !== FALSE) {
                 $content[] = $data;
             }
             fclose($handle);
@@ -24,15 +26,3 @@ class ReadFile
         return $content;
     }
 }
-
-//    public function writeCsvFile($content)
-//    {
-//        $fp = fopen($this->fileName, 'w');
-//
-//        foreach ($content as $fields) {
-//            fputcsv($fp, $fields);
-//        }
-
-//        fclose($fp);
-//    }
-
