@@ -25,14 +25,3 @@ class ReadFile
     }
 }
 
-//    public function writeCsvFile($content)
-//    {
-//        $fp = fopen($this->fileName, 'w');
-//
-//        foreach ($content as $fields) {
-//            fputcsv($fp, $fields);
-//        }
-
-//        fclose($fp);
-//    }
-
