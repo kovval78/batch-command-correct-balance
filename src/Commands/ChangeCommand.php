@@ -19,7 +19,7 @@ class ChangeCommand extends Command
         $this
             ->setName('cbs:command:correct-balance')
             ->setDescription('Add quotes to field "Reference"')
-            ->addArgument('filename', InputArgument::OPTIONAL, 'File name');
+            ->addArgument('filename', InputArgument::REQUIRED, 'File name');
 
             parent::configure();
     }
