@@ -6,12 +6,12 @@
 * [Setup](#setup)
 
 ## General info
-The command add quotes to the column "Reference". Generates and saved to csv file fake data.
+The command add quotes to the column "Reference".
 
 ## Technologies
 
 Project is creacted with:
-* Symfony console
+* The Symfony console component
 
 ## Setup
 To run this project, install it locally using Composer:
