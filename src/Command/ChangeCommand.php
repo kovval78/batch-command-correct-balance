@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Commands;
+namespace App\Command;
 
-use App\Services\Content;
-use App\Services\ReadFile;
+use App\Service\Content;
+use App\Service\ReadFile;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
