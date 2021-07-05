@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Commands;
 
-use App\Classes\Content;
-use App\Classes\ReadFile;
+use App\Services\Content;
+use App\Services\ReadFile;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
