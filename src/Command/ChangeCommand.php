@@ -10,7 +10,7 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use RuntimeException;
+use Exception;
 
 class ChangeCommand extends Command
 {
@@ -18,7 +18,7 @@ class ChangeCommand extends Command
     {
         $this
             ->setName('cbs:command:correct-balance')
-            ->setDescription('Add quotes to field "Reference"')
+            ->setDescription('Add quotes to the column "Reference"')
             ->addArgument('filename', InputArgument::REQUIRED, 'File name');
 
             parent::configure();
@@ -35,7 +35,7 @@ class ChangeCommand extends Command
         try {
             $output->writeln($newContent);
 
-        } catch (RuntimeException $exception) {
+        } catch (Exception $exception) {
             $output->writeln($exception->getMessage());
         }
 
