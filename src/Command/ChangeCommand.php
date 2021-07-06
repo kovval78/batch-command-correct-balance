@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Command;
 
 use App\Service\ContentProcessor;
-use App\Service\ReadFile;
+use App\Service\ReadFileCsv;
 use Exception;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -26,7 +26,7 @@ class ChangeCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $inputFile = new ReadFile($input->getArgument('filename'));
+        $inputFile = new ReadFileCsv($input->getArgument('filename'));
         $content = $inputFile->readCsvFile();
         $contentObj = new ContentProcessor();
         $newContent = $contentObj->process($content);

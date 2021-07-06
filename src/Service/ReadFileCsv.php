@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Service;
 
-class ReadFile implements ReadFileInterface
+class ReadFileCsv implements ReadFileInterface
 {
     private string $fileName;
 
