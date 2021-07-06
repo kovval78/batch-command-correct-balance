@@ -9,6 +9,7 @@
     ],
     "type": "project",
     "require": {
+        "php": "^7.4",
         "symfony/console": "^5.3"
     },
     "license": "MIT",

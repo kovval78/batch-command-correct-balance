@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace App\Service;
 
-Class Content
+Class ContentProcessor implements ContentProcessorInterface
 {
     public function process(array $content): string
     {
         $newContent = '';
         foreach($content as $row)
         {
-            $amount = StringParser::getAmount($row);
-            $currency = StringParser::getCurrency($row);
-            $reference = StringParser::getReference($row);
+            $amount = RowParser::getAmount($row);
+            $currency = RowParser::getCurrency($row);
+            $reference = RowParser::getReference($row);
             $newContent .= sprintf("bin/console cbs:command:correct-balance ffddb369-8b3b-4cb1-9501-6fa56201fe7c 231884 36488655 %s %s \"%s\"",
                 $amount,
                 $currency,

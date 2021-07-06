@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace App\Command;
 
-use App\Service\Content;
+use App\Service\ContentProcessor;
 use App\Service\ReadFile;
+use Exception;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Exception;
 
 class ChangeCommand extends Command
 {
@@ -28,13 +28,11 @@ class ChangeCommand extends Command
     {
         $inputFile = new ReadFile($input->getArgument('filename'));
         $content = $inputFile->readCsvFile();
-        $contentObj = new Content();
-
+        $contentObj = new ContentProcessor();
         $newContent = $contentObj->process($content);
 
         try {
             $output->writeln($newContent);
-
         } catch (Exception $exception) {
             $output->writeln($exception->getMessage());
         }

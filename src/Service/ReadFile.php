@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Service;
 
-class ReadFile
+class ReadFile implements ReadFileInterface
 {
     private string $fileName;
 
@@ -22,7 +22,6 @@ class ReadFile
             }
             fclose($handle);
         }
-
         return $content;
     }
 }
