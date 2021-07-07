@@ -21,6 +21,8 @@ class ContentProcessor implements ContentProcessorInterface
             $newContent .= PHP_EOL;
         }
 
+        var_dump($newContent);
+
         return $newContent;
     }
 }

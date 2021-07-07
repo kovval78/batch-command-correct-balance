@@ -23,8 +23,6 @@ class ReadFileCsv implements ReadFileInterface
             fclose($handle);
         }
 
-        var_dump($content);
-
         return $content;
     }
 }
