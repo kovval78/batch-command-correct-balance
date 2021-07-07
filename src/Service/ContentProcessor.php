@@ -4,13 +4,12 @@ declare(strict_types=1);
 
 namespace App\Service;
 
-Class ContentProcessor implements ContentProcessorInterface
+class ContentProcessor implements ContentProcessorInterface
 {
     public function process(array $content): string
     {
         $newContent = '';
-        foreach($content as $row)
-        {
+        foreach ($content as $row) {
             $amount = RowParser::getAmount($row);
             $currency = RowParser::getCurrency($row);
             $reference = RowParser::getReference($row);
