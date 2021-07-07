@@ -2,11 +2,11 @@
 <phpunit bootstrap="vendor/autoload.php"
          colors="true"
          verbose="true"
-         stopOnFailure="false">
+         stopOnFailure="false"
+         testdox="true">
     <testsuites>
-        <testsuite>
-            <name>Calculator</name>
-            <directory>tests</directory>
+        <testsuite name="Unit Tests">
+            <directory phpVersion="7.4" phpVersionOperator="^">tests</directory>
         </testsuite>
     </testsuites>
 </phpunit>
