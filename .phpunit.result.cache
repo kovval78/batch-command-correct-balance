@@ -1,1 +1,1 @@
-{"version":1,"defects":{"Error":4},"times":{"Error":0.002}}
+{"version":1,"defects":{"Error":4,"Tests\\Service\\ContentProcessorTest::testIsNewContentReturnsValidString":4,"Tests\\Service\\ContentProcessorTest::testIsItProcessesValidNewContent":4},"times":{"Error":0.002,"Tests\\Service\\ContentProcessorTest::testIsNewContentReturnsValidString":0.002,"Tests\\Service\\ContentProcessorTest::testIsItProcessesValidNewContent":0.001}}
