@@ -9,6 +9,13 @@ use PHPUnit\Framework\TestCase;
 
 final class ContentProcessorTest extends TestCase
 {
+    protected ContentProcessor $contentProcessor;
+
+    protected function setUp(): void
+    {
+        $this->contentProcessor = new ContentProcessor();
+    }
+
     public function testIsItProcessesValidNewContent()
     {
         $content = [
@@ -22,10 +29,10 @@ final class ContentProcessorTest extends TestCase
 
         $contentProcessor = new ContentProcessor();
 
-        $result = $contentProcessor->process([$content]);
+        $actual = $contentProcessor->process([$content]);
 
         $expected = 'bin/console cbs:command:correct-balance ffddb369-8b3b-4cb1-9501-6fa56201fe7c 231884 36488655 1511.48 GBP "IFX - TRADE - Payment cancelled - Anisa Toland - OF inv 16422449 - MPSS409759-R1799513 - sell GBP 1511.48 @ 1"' . PHP_EOL;
 
-        $this->assertSame($expected, $result);
+        $this->assertSame($expected, $actual);
     }
 }

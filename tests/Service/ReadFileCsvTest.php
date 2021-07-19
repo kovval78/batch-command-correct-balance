@@ -26,7 +26,7 @@ final class ReadFileCsvTest extends TestCase
         $this->assertFileExists('/home/kamil/PhpstormProjects/command/sample.csv');
     }
 
-    public function testCountingAddingElementsToArray()
+    public function testCountingAddingElementsToArray(): void
     {
         $content = [];
         $this->assertCount(0, $content);
@@ -35,22 +35,19 @@ final class ReadFileCsvTest extends TestCase
         $this->assertCount(1, $content);
     }
 
-
-    public function testIsTheMethodReturnArrayWithTheCsvFile()
+    public function testDoesTheMethodReturnArrayWithTheCsvFile(): array
     {
-//        $expected =  array_map('str_getcsv', file('/home/kamil/PhpstormProjects/command/sample.csv'));
-
         $expected = [];
         if (($handle = fopen('/home/kamil/PhpstormProjects/command/sample.csv', 'r')) !== FALSE) {
             while (($data = fgetcsv($handle, 1000)) !== FALSE) {
                 $expected[] = $data;
             }
             fclose($handle);
-        };
+        }
 
-        $result = $this->readFileCsv->readCsvFile();
+        $this->assertSame($expected, $this->readFileCsv->readCsvFile());
 
-        $this->assertSame($expected, $result);
+
+        return $expected;
     }
-
 }
